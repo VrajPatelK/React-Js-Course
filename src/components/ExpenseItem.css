@@ -1,0 +1,33 @@
+.expense-item-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    margin: 1rem 0;
+    background-color: #4b4b4b;
+}
+
+.expense-description {
+    color: #fff;
+    font-weight: 800;
+}
+
+.expense-item-container h2 {
+    color: #3a3a3a;
+    font-size: 1rem;
+    flex: 1;
+    margin: 0 1rem;
+    color: white;
+}
+  
+@media (min-width: 580px) {
+    .expense-description {
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        flex: 1;
+    }   
+    .expense-description h2 {
+        font-size: 1.25rem;
+    }
+}
