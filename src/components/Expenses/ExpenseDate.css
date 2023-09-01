@@ -1,17 +1,3 @@
-/* .expense-date-item{
-    border: 2px solid #dfe6e9;
-    padding: .5rem;
-    border-radius: .5rem;
-    color: #fff;
-    font-weight: 600;
-    background: #2d3436;
-    min-width: 8%;
-}
-
-.expense-month{margin-block: .1rem;}
-.expense-year{margin-block: .1rem;}
-.expense-day{margin-block: .1rem;font-size: 1.3rem;} */
-
 .expense-date-item {
     display: flex;
     flex-direction: column;

@@ -1,6 +1,6 @@
 import ExpenseDate from "./ExpenseDate";
 import ExpenseCost from "./ExpenseCost";
-import Card from "./Card";
+import Card from "../UI/Card";
 
 import "./ExpenseItem.css";
 
