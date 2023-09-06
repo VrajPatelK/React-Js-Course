@@ -1,7 +1,10 @@
 import ExpenseItem from "./ExpenseItem";
 import Card from "../UI/Card";
+import ExpenseFilter from "../ExpenseFilter/ExpenseFilter";
 
 import "./Expenses.css";
+import { useState } from "react";
+import userEvent from "@testing-library/user-event";
 
 export default function Expenses() {
   const expenses = [
@@ -26,11 +29,22 @@ export default function Expenses() {
     },
   ];
 
+  // maintain year on filter..
+  const [selectedYear, setSelectedYear] = useState("2020");
+  function updateFilterYear(year) {
+    setSelectedYear(year);
+  }
+
   return (
     <Card className="expenses-container">
+      <ExpenseFilter
+        selectedYear={selectedYear}
+        onFilterChange={updateFilterYear}
+      />
       <ExpenseItem expense={expenses[0]} />
       <ExpenseItem expense={expenses[1]} />
       <ExpenseItem expense={expenses[2]} />
+      <ExpenseItem expense={expenses[3]} />
     </Card>
   );
 }
