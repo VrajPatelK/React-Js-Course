@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./ExpenseForm.css";
 
-export default function ExpenseForm() {
+export default function ExpenseForm(props) {
   //
   const [title, setTitle] = useState("");
   const [amt, setAmt] = useState("");
@@ -24,12 +24,14 @@ export default function ExpenseForm() {
   const sumbitHadler = (e) => {
     e.preventDefault();
 
-    let data = {
+    let newExpense = {
+      id: Math.random().toString(),
       title: title,
       amount: amt,
-      calander: new Date(cal),
+      date: new Date(2020, 7, 14),
     };
-    console.log(data);
+
+    props.onAddNewExpense(newExpense);
   };
 
   return (
