@@ -29,34 +29,19 @@ const Initial_Expenses = [
 function App() {
   //state manage ..
   const [expenses, setExpenses] = useState(Initial_Expenses); // all
-  const [filteredExpenses, setFilteredExpenses] = useState(expenses); // filetered
 
   //update..
   function addNewExpense(newExpense) {
     setExpenses((prevExpenses) => {
-      let updatedExpenses = [newExpense, ...prevExpenses]; // add new expense
-
-      setFilteredExpenses(updatedExpenses); // update the filtered state
-      return updatedExpenses; // update the expenses state
+      return [newExpense, ...prevExpenses]; // add new expense
     });
-  }
-
-  function changedFilterHandler(selectedYear) {
-    let filtered = expenses.filter((expense) => {
-      return expense.date.getFullYear().toString() === selectedYear;
-    });
-
-    setFilteredExpenses(filtered);
   }
 
   // return ..
   return (
     <div className="App">
       <NewExpense onAddNew={addNewExpense} />
-      <Expenses
-        expenses={filteredExpenses}
-        onChnageFilte={changedFilterHandler}
-      />
+      <Expenses expenses={expenses} />
     </div>
   );
 }
