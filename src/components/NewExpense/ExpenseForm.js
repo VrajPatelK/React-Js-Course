@@ -28,7 +28,7 @@ export default function ExpenseForm(props) {
       id: Math.random().toString(),
       title: title,
       amount: amt,
-      date: new Date(2020, 7, 14),
+      date: new Date(cal),
     };
 
     props.onAddNewExpense(newExpense);

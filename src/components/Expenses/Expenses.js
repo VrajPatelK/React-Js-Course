@@ -4,13 +4,13 @@ import ExpenseFilter from "../ExpenseFilter/ExpenseFilter";
 
 import "./Expenses.css";
 import { useState } from "react";
-import userEvent from "@testing-library/user-event";
 
 export default function Expenses(props) {
   // maintain year on filter..
   const [selectedYear, setSelectedYear] = useState("2020");
   function updateFilterYear(year) {
     setSelectedYear(year);
+    props.onChnageFilte(year);
   }
 
   return (
@@ -19,10 +19,14 @@ export default function Expenses(props) {
         selectedYear={selectedYear}
         onFilterChange={updateFilterYear}
       />
-      <ExpenseItem expense={props.expenses[0]} />
-      <ExpenseItem expense={props.expenses[1]} />
-      <ExpenseItem expense={props.expenses[2]} />
-      <ExpenseItem expense={props.expenses[3]} />
+      {props.expenses.map((expense) => (
+        <ExpenseItem
+          key={expense.id}
+          title={expense.title}
+          amount={expense.amount}
+          date={expense.date}
+        />
+      ))}
     </Card>
   );
 }
