@@ -32,6 +32,12 @@ export default function ExpenseForm(props) {
     };
 
     props.onAddNewExpense(newExpense);
+    props.onChangeContent(false); // hide the form
+  };
+
+  //
+  const hideForm = () => {
+    props.onChangeContent(false); // hide the form
   };
 
   return (
@@ -65,6 +71,7 @@ export default function ExpenseForm(props) {
           </div>
         </div>
         <div className="new-expense__actions">
+          <button onClick={hideForm}>Cancel</button>
           <button type="submit">Add Expense</button>
         </div>
       </form>
