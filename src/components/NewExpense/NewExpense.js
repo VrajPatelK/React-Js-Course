@@ -1,6 +1,6 @@
 import { useState } from "react";
 import ExpenseForm from "./ExpenseForm";
-import AddNewExpenseButton from "../Expenses/AddNewExpenseButton";
+import AddNewExpenseButton from "./AddNewExpenseButton";
 
 import "./NewExpense.css";
 
