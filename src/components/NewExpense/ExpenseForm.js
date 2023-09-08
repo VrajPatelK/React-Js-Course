@@ -27,7 +27,7 @@ export default function ExpenseForm(props) {
     let newExpense = {
       id: Math.random().toString(),
       title: title,
-      amount: amt,
+      amount: parseInt(amt),
       date: new Date(cal),
     };
 
